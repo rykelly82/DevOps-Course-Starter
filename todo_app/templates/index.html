@@ -11,7 +11,7 @@
       <label for="title">Enter new todo item: </label>
       <input type="text" name="title" required />
     <div>
-      <input type="submit" value="Add Item!!!!" />
+      <input type="submit" value="Add Item..." />
     </div>
   </form>
 <br>
@@ -21,7 +21,12 @@
        <h2>Items</h2>
        <ul class="list-group mb-4">  
         {% for item in items %}
-          <li>{{item.title}} - {{item.status}}</li>
+          <li>{{item.name}} - {{item.status}}</li>
+          {% if item.status != "Done"%}
+          <form action="complete-item/{{item.id}}" method="post">  
+             <button>Complete</button>
+             </form>
+             {% endif %}    
         {% endfor %}
        </ul>
     </div>
