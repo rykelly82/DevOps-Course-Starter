@@ -16,7 +16,7 @@ def add_item(title):
 
     response = requests.post(reqUrl, params = query_params)
 
-    print(response.text)
+    
 
 
 def get_items():

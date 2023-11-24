@@ -24,9 +24,9 @@
           <li>{{item.name}} - {{item.status}}</li>
           {% if item.status != "Done"%}
           <form action="complete-item/{{item.id}}" method="post">  
-            <button>Complete</button>
-            </form>
-            {% endif %}    
+             <button>Complete</button>
+             </form>
+             {% endif %}    
         {% endfor %}
        </ul>
     </div>
