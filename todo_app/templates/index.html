@@ -3,8 +3,8 @@
 
 {% block content %}
   <div class="jumbotron">
-    <h1 class="display-4">To-Do App</h1>
-    <p class="lead">Just another to-do app.</p>
+    <h1 class="display-4"> <b>To-Do App</h1></b>
+    <p class="lead">Possibly the best To Do app in the world...</p>
   </div>
 
   <form action="add_todo_item" method="post">
@@ -20,7 +20,7 @@
     <div class="col-md-12">
        <h2>Items</h2>
        <ul class="list-group mb-4">  
-        {% for item in items %}
+        {% for item in view_model.items %}
           <li>{{item.name}} - {{item.status}}</li>
           {% if item.status != "Done"%}
           <form action="complete-item/{{item.id}}" method="post">  
