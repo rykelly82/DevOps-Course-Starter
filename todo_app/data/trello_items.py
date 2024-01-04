@@ -10,7 +10,7 @@ def add_item(title):
     query_params = {
         "key": os.getenv("TRELLO_API_KEY"),
         "token": os.getenv("TRELLO_API_TOKEN"),
-        "idList": os.getenv("TODO_LIST_ID"),
+        "idList": os.getenv("TRELLO_TODO_LIST_ID"),
         "name": title
     }
 
