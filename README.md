@@ -73,4 +73,18 @@ poetry run pytest
 (Please make sure you have run `poetry add pytest` in the Terminal beforehand to install `pytest`).
 
 
+## Deploying the application via Ansible to a VM
+
+To deploy the application via Ansible copy the `Ansible` folder to the Host Node, update the inventory file (to include the control node you would like to deploy to) and run the following command:
+````
+ansible-playbook plybook.yaml -i inventory.yaml
+````
+
+> Please note that you will need to have setup passwordless GGH access from the host to each of the managed nodes.
+
+
+
+
+
+
 
