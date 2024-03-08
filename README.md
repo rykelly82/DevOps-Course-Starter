@@ -82,7 +82,22 @@ ansible-playbook plybook.yaml -i inventory.yaml
 
 > Please note that you will need to have setup passwordless GGH access from the host to each of the managed nodes.
 
+## Build and Running the App via Docker
 
+To build the container for local development, please run:
+```bash
+docker run --env-file ./.env --publish 8000:5000 -it --mount "type=bind,source=$(pwd)/todo_app,target=/app/todo_app" todo-app:dev
+```
+
+For the production container, the build and run commands are:
+
+```bash
+docker build --tag todo-app:prod --target production .
+```
+
+```bash
+docker run --env-file ./.env --publish 8000:5000 -it --mount "type=bind,source=$(pwd)/todo_app,target=/app/todo_app" todo-app:prod
+```
 
 
 
