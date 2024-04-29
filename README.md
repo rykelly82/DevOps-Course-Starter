@@ -99,6 +99,9 @@ docker build --tag todo-app:prod --target production .
 docker run --env-file ./.env --publish 8000:5000 -it --mount "type=bind,source=$(pwd)/todo_app,target=/app/todo_app" todo-app:prod
 ```
 
+## Architectural Diagrams
+
+Architecture digrams can be found in the `diagrams` subfolder. They were built using [https://app.diagrams.net/] (you can use the `.draw.io` file to edit these diagrams).
 
 
 
