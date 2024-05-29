@@ -102,7 +102,7 @@ docker build --tag todo-app:prod --target production .
 ```
 
 ```bash
-docker run --env-file ./.env --publish 8000:5000 -it --mount "type=bind,source=$(pwd)/todo_app,target=/app/todo_app" todo-app:prod
+docker run --publish 8000:5000 -it --env-file .env todo-app:prod
 ```
 
 ## Architectural Diagrams
