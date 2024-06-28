@@ -102,12 +102,29 @@ docker build --tag todo-app:prod --target production .
 ```
 
 ```bash
-docker run --env-file ./.env --publish 8000:5000 -it --mount "type=bind,source=$(pwd)/todo_app,target=/app/todo_app" todo-app:prod
+docker run --publish 8000:5000 -it --env-file .env todo-app:prod
 ```
 
 ## Architectural Diagrams
 
 Architecture digrams can be found in the `diagrams` subfolder. They were built using [https://app.diagrams.net/] (you can use the `.draw.io` file to edit these diagrams).
+
+## Hosting on Azure
+
+The container image that is deployed to Azure is hosted on Docker Hub at https://hub.docker.com/repository/docker/rkelly2000/todo-app/general
+
+The todo-app website is hosted at https://rktodo-app.azurewebsites.net/
+
+To update the website you will need to run the following commands to build and push the updated container image:
+
+```bash
+docker build --tag rkelly2000/todo-app --target production .
+docker push rkelly2000/todo-app
+```
+
+Next you will need to make a POST request to the webhook list provided on the App Service (under the Deployment Centre Tab). This will trigger Azure to pull the updated image from Docker Hub.
+
+
 
 
 
