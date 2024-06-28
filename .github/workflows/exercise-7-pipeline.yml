@@ -29,3 +29,5 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
       - run: docker build --tag rkelly2000/todo-app:latest --target production .
       - run: docker push rkelly2000/todo-app:latest
+      - run: curl -dH -X POST '${{ secrets.APP_SERVICE_DEPLOYMENT_WEBHOOK }}'
+      
