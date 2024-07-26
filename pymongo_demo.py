@@ -6,9 +6,9 @@ dotenv.load_dotenv()
 
 client = pymongo.MongoClient(os.getenv("MONGO_CONNECTION_STRING"))
 
-db =client.todoappdatabase
+db =client[os.getenv("MONGO_DATABASE_NAME")]
 
-collection = db.todo_items
+collection = db[os.getenv("MONGO_COLLECTION_NAME")]
 
 # Insert a record
 collection.insert_one({"description": "A pymongo document"})
@@ -17,12 +17,8 @@ collection.insert_one({"description": "A pymongo document"})
 
 list(collection.find())
 
-
 # Insert and update a record
 collection.insert_one({"description": "An updateable document document", "type": "updateable"})
 collection.update_one({"type": "updateable"}, {"$set": {"description": "CHANGED!!!"}})
-
-
-
 
 print(collection)
