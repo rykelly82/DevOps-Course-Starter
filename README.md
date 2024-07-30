@@ -34,16 +34,16 @@ $ cp .env.template .env  # (first time only)
 
 The `.env` file is used by flask to set environment variables when running `flask run`. This enables things like development mode (which also enables features like hot reloading when you make a file change). There's also a [SECRET_KEY](https://flask.palletsprojects.com/en/1.1.x/config/#SECRET_KEY) variable which is used to encrypt the flask session cookie.
 
-## Setting Up Trello Integration
+## Setting Up Mongo DB Database
 
-This app uses the Trello API for storing the todo items. 
+This app uses a Mongo DB Database for storing the todo items. 
 
 Set up: 
 
-* A Trello account with Todo board. 
-* Generate an API key and Token.
+* A Mongo DB Account & Database
+* Provide a connection string for connecting to the database
 
-Once you have done this, you will need to update the `.env` file to include your details.
+Once you have done this, you will need to update the `.env` file to include your Mongo DB database details.
 
 
 ## Running the App
