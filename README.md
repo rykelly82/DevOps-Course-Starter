@@ -124,6 +124,10 @@ docker push rkelly2000/todo-app
 
 Next you will need to make a POST request to the webhook list provided on the App Service (under the Deployment Centre Tab). This will trigger Azure to pull the updated image from Docker Hub.
 
+## Data Encryption
+
+Todo items are stored in a Cosmos DB Satabase (Using MongoDB API). [Data is encrypted at rest by DEFAULT and will cover in transit](https://learn.microsoft.com/en-us/azure/cosmos-db/database-encryption-at-rest).
+
 
 
 
