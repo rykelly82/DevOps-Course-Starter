@@ -126,7 +126,7 @@ Next you will need to make a POST request to the webhook list provided on the Ap
 
 ## Data Encryption
 
-Todo items are stored in a Cosmos DB Satabase (Using MongoDB API). [Data is encrypted at rest by DEFAULT and will cover in transit](https://learn.microsoft.com/en-us/azure/cosmos-db/database-encryption-at-rest).
+Todo items are stored in a Cosmos DB Satabase (Using MongoDB API). [Data is encrypted at rest by DEFAULT and will cover in transit](https://learn.microsoft.com/en-us/azure/cosmos-db/database-encryption-at-rest)..
 
 
 
